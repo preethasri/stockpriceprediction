@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Cookie', cursive;
+}
+
+.section {
+    font-size: large;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.mainsection {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    left: -3px;
+    background-color: #7f6b94;
+    color: black;
+    width: 50.5%;
+    height: 80vh;
+    padding: 8rem 14rem;
+}
+
+input {
+    height: 4vh;
+}
+
+button {
+    border-radius: 12px;
+    border: solid black;
+    height: 4vh;
+    margin-top: 2rem;
+    margin-left: 8rem;
+    padding: 0rem 1rem;
+}
+
+.Happytheme {
+    background: url("https://media1.giphy.com/media/l4KhWPNyLHiB3TjVe/giphy.gif?cid=ecf05e473wlyh68rstlk5dp4awlwnbh8yga0clpmg4ag3k9a&rid=giphy.gif&ct=g");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sadtheme {
+    background: url("https://media0.giphy.com/media/ynqwJhLbxqxbc5q04n/giphy.gif?cid=ecf05e47r8p5ehcifu2e5za5od7jbgdbrmo2vc19o0wq4hsb&rid=giphy.gif&ct=g");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img {
+    width: 50%;
+    height: 80vh;
+    min-height: inherit;
+    position: relative;
+}
+
+.image {
+    position: absolute;
+    right: -5px;
+}
+
+.output {
+    border: 20px;
+    border: 1px solid black;
+    padding: 2rem 2rem;
+    margin-top: 2rem;
+}
+
+input::placeholder {
+    color: black;
+}
+
+footer {
+    background-color: black;
+    margin: initial;
+    width: 100%;
+    height: 13vh;
+    margin-top: 5%;
+    color: white;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    color: white
+}
