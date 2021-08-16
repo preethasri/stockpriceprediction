@@ -32,9 +32,6 @@ function StockPrediction() {
         result.innerHTML = `You're Total Profit Is ${profit}$. You Gain ${profitPercent}% Of Your Stocks.`;
         document.body.classList.add('Happytheme');
 
-
-
-
     } else if (sp === cp) {
         result.innerHTML = "Your Total Profit Is 0$ And You Gain 0.00% Of Your Stocks"
 
