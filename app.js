@@ -1,42 +1,44 @@
-var stockPrice = document.querySelector(".purchasedPrice");
-var stockQuantity = document.querySelector(".stockQuantity");
-var currentPrice = document.querySelector(".currentPrice");
-var submitBtn = document.querySelector(".submit");
-var result = document.querySelector(".output");
+const stockPrice = document.querySelector(".purchasedPrice");
+const stockQuantity = document.querySelector(".stockQuantity");
+const currentPrice = document.querySelector(".currentPrice");
+const submitBtn = document.querySelector(".submit");
+const result = document.querySelector(".output");
 
 
-function StockPrediction() {
-    let sp = stockPrice.value;
-    let stockQnty = stockQuantity.value;
-    let cp = currentPrice.value;
 
-    if (stockPrice.value == "" || stockQuantity.value == "" || currentPrice.value == "") {
-        result.innerHTML = "Please Enter A Valid Input";
-        return;
+function checkHandler() {
 
+    let CP = stockPrice.value;
+    let stockQty = stockQuantity.value;
+    let SP = currentPrice.value;
+    if (!isNaN(CP) && !isNaN(stockQty) && !isNaN(SP)) {
+        CP = Number(CP);
+        Qty = Number(stockQty);
+        SP = Number(SP);
+        if (CP > 0 && stockQty > 0 && SP > 0) {
+
+            if (CP > SP) {
+                const loss = ((CP - SP) * stockQty).toFixed(2);
+                const lossPercentage = (((CP - SP) * 100) / CP).toFixed(2);
+                result.innerHTML = `You lost ${lossPercentage}%. Your total loss is ${loss}Rupees`;
+                document.body.classList.add('sadtheme')
+
+
+
+            } else {
+                const profit = ((SP - CP) * stockQty).toFixed(2)
+                const profitPercentage = (((SP - CP) * 100) / CP).toFixed(2);
+                result.innerHTML = `You gained ${profitPercentage}%. Your total profit is ${profit}Rupees`;
+                document.body.classList.add('Happytheme')
+
+            }
+        } else {
+
+            result.innerHTML = "please enter valid input"
+        }
+    } else {
+
+        result.innerHTML = "Please enter valid input"
     }
-    if (Math.sign(stockPrice.value == -1) || Math.sign(stockQuantity.value == -1) || Math.sign(currentPrice.value == -1) || stockPrice.value == 0 || stockQuantity.value == 0 || currentPrice.value == 0) {
-        result.innerHTML = "Please Don't Enter Values Equal To Or Less Than Zero ";
-        return;
-
-    }
-    if (sp > cp) {
-        let loss = (sp - cp) * stockQnty;
-        let lossPercent = (((sp - cp) * 100) / sp).toFixed(2)
-        result.innerHTML = `You're Total Loss Is ${loss}$. You Lost ${lossPercent}% Of Your Stocks.`;
-        document.body.classList.add('sadtheme');
-
-    } else if (cp > sp) {
-        let profit = (cp - sp) * stockQnty;
-        let profitPercent = (((cp - sp) * 100) / sp).toFixed(1)
-        result.innerHTML = `You're Total Profit Is ${profit}$. You Gain ${profitPercent}% Of Your Stocks.`;
-        document.body.classList.add('Happytheme');
-
-    } else if (sp === cp) {
-        result.innerHTML = "Your Total Profit Is 0$ And You Gain 0.00% Of Your Stocks"
-
-    }
-
-
 }
-submitBtn.addEventListener('click', StockPrediction)
+submitBtn.addEventListener("click", checkHandler);
