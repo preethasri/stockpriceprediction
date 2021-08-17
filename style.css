@@ -62,6 +62,8 @@ button {
     border: 1px solid black;
     padding: 2rem 2rem;
     margin-top: 2rem;
+    color: black;
+    background-color: #EA98B5;
 }
 
 input::placeholder {
