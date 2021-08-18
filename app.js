@@ -36,9 +36,6 @@ function checkHandler() {
 
             result.innerHTML = "please enter valid input"
         }
-    } else {
-
-        result.innerHTML = "Please enter valid input"
     }
 }
 submitBtn.addEventListener("click", checkHandler);
